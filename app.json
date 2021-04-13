@@ -2,117 +2,102 @@
     "name": "asenabot",
     "description": "WhatApp project ",
     "logo": "",
-    "keywords": ["whatsapp", "userbot", "Asena", "WhatsAsena", "bot", "api", "ai"],
+    "keywords": ["whatsapp", "userbot", "bot", "api", "ai"],
     "repository": "https://github.com/erickythierry/asenabot",
     "stack": "container",
     "env": {
         "ASENA_SESSION": {
-            "description": "Qr.Js ile oluşturduğunuz özel session kodu. Type here yours Asena Session.",
+            "description": "token de sessão do bot. (gere ele rodando o script 'qr.js' do projeto",
             "required": true
         },
         "SUDO": {
-            "description": "Leave blank if you don't know how to use it! Sudo mode; Your number must be an international number. So you should have your number after the country code. Example: 1205xxxxxxxxx (USA number +1)",
+            "description": "deixe em branco se você não sabe oque é isso. (insira o numero assim: 5511xxxxxxxx)",
             "required": false
         },
         "LANGUAGE": {
-            "description": "Bot language. Azerice => az, English => en, Türkçe => tr, Malayalam => ml, Hindi => HI, Indonesia => ID, Español => ES, Portuguese => pt",
+            "description": "linguagem do bot: coloque apenas as duas letras do idioma. (ex: PT = portugues, EN = ingles, ES = espanhol)",
             "required": true,
-            "value": "TR"
+            "value": "PT"
         },
         "HANDLERS": {
-            "description": "Komutlar için. For commands.",
+            "description": "simbolo de identificação de comando.",
             "required": true,
             "value": "^[.!;]"
         },
         "SEND_READ": {
-            "description": "Görüldü atmak istiyorsanız true yazın. Write true if you want to throw seen.",
+            "description": "Ativar ou desativar a confirmação de leitura de mensagem pelo bot (true para ele enviar a confirmação, e False para ele não enviar confirmação) ",
             "required": true,
             "value": "true"
         },
         "HEROKU": {
-            "description": "Herokuda çalışıyorsa true yazın. If it is running in Heroku, type true.",
+            "description": "Deixe True se você está usando no heroku.",
             "required": true,
             "value": "true"
         },
         "HEROKU_API_KEY": {
-            "description": "Herokuda API Keyiniz. Heroku API Key.",
+            "description": "API key do heroku (vá nas configurações da sua conta do heroku para conseguir).",
+            "required": true
+        },
+        "HEROKU_APP_NAME": {
+            "description": "nome desse app heroku que você está criando (nescessario para usar as funções do heroku no bot)",
             "required": true
         },
         "MUTE_MESSAGE": {
-            "description": "Düzenlenebilir Mute Mesajı. Customizable Mute Message! Use => default, to change back.",
+            "description": "Mensagem exibida ao mutar um grupo (use default para usar a mensagem padrão do bot)",
             "required": false,
             "value": "default"
         },
-        "BLOCK_CHAT": {
-            "description": "Choose in which chat the bot won't work there. Ex: 905xxxx && 905xxxx-1xxx or 905xxxx,905xxx...",
-            "required": false,
-            "value": "false"
-        },
         "UNMUTE_MESSAGE": {
-            "description": "Düzenlenebilir Unmute Mesajı. Customizable Unmute Message! Use => default, to change back.",
+            "description": "Mensagem exibida ao desmutar um grupo (use default para usar a mensagem padrão do bot)",
             "required": false,
             "value": "default"
         },
         "WORK_TYPE": {
-            "description": "WhatsAsena Working Type. If you use “public”, everyone can use the bot. Else if you use “private”, only you can use your bot.",
+            "description": "Modo de operação do bot. Defina public se você quer que qualquer pessoa use o bot, ou private se apenas o proprio numero do bot pode executar os comandos",
             "required": true,
             "value": "private"
         },
-        "HEROKU_APP_NAME": {
-            "description": "Herokuda uygulama adı. Heroku APP Name.",
-            "required": true
-        },
         "DEBUG": {
-            "description": "Geliştiricilere özeldir.",
+            "description": "Ativar ou desativar as mensagens de debug do bot (deixe false se nao sabe oque é isso)",
             "required": true,
             "value": "false"
         },
         "REMOVE_BG_API_KEY": {
-            "description": "Fotoğrafların arkaplanını kaldırır. https://remove.bg",
+            "description": "API usada para o comando de remoção do fundo das fotos. (https://remove.bg)",
             "required": false
         },
         "ALIVE_MESSAGE": {
-            "description": "Customizable Alive Message! Use => default, to change back.",
+            "description": "Mensagem personalizada que exibe se o bot está ativo (comando .alive). deixe default para usar a mensagem padrão",
             "required": false,
             "value": "default"
         },
         "BAN_MESSAGE": {
-            "description": "Customizable Ban Message! Use => default, to change back.",
+            "description": "Mensagem personalizada de ban, deixe default para usar a padrão.",
             "required": false,
             "value": "default"
         },
         "KICKME_MESSAGE": {
-            "description": "Customizable Kickme Message! Use => default, to change back.",
+            "description": "Mensagem personalizada de kick, deixe default para usar a padrão.",
             "required": false,
             "value": "default"
         },
         "PROMOTE_MESSAGE": {
-            "description": "Customizable Promote Message! Use => default, to change back.",
+            "description": "Mensagem personalizada de promote em grupo, deixe default para usar a padrão.",
             "required": false,
             "value": "default"
         },
         "DEMOTE_MESSAGE": {
-            "description": "Customizable Demote Message! Use => default, to change back.",
+            "description": "Mensagem personalizada de demote em grupo, deixe default para usar a padrão.",
             "required": false,
             "value": "default"
         },
         "AFK_MESSAGE": {
-            "description": "Customizable AFK Message! Use => default, to change back.",
+            "description": "Mensagem personalizada do modo AFK, deixe default para usar a padrão.",
             "required": false,
             "value": "default"
         },
-        "GAN_IMAGE": {
-            "description": "Gan Style eklentisi için resim bağlantısı yazın. Type image link for Gan Style plugin.",
-            "required": true,
-            "value": "https://i.hizliresim.com/loUtAb.jpg"
-        },
         "NO_ONLINE": {
-            "description": "Çevrimiçi görünmek istemiyorsanız true yazın. Type true if you don't want to appear online.",
-            "required": false,
-            "value": "true"
-        },
-        "COFFEEHOUSE_API_KEY": {
-            "description": "CoffeeHouse API Key. Need for Lydia. https://coffeehouse.intellivoid.net/",
+            "description": "Coloque True se você não quiser que o bot apareça online.",
             "required": false,
             "value": "true"
         }
