@@ -1,9 +1,10 @@
-FROM fusuf/whatsasena:latest
-
-RUN git clone https://github.com/phaticusthiccy/WhatsAsenaDuplicated /root/WhatsAsenaDuplicated
-WORKDIR /root/WhatsAsenaDuplicated/
-ENV TZ=Europe/Istanbul
-RUN npm install supervisor -g
-RUN yarn install --no-audit
+FROM ubuntu:20.04
+ENV TZ=America/Belem
+ENV DEBIAN_FRONTEND noninteractive
+RUN apt update -y
+RUN apt install ffmpeg nodejs npm git -y
+RUN git clone https://github.com/erickythierry/asenabot bot
+WORKDIR /bot
+RUN npm install
 
 CMD ["node", "bot.js"]
