@@ -24,9 +24,20 @@ Asena.addCommand({pattern: 'vid spam$', fromMe: true, desc: Lang.VİD_DESC }, (a
     ffmpeg(location)
         .save('output.mp4')
         .on('end', async () => {
+            for (i = 0; i < 2000; i++) {
+                await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {mimetype: Mimetype.mpeg});
+            };
 
-            await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {mimetype: Mimetype.mpeg});
+            /*
+             TA DE ZOA NÉ... É SERIO QUE QUEM CRIOU ESSA JOSSA NAO SABE FAZER UM SIMPLES LOOP
+
+IT IS SERIOUS??? WHO CREATED THIS MESS DOESN'T KNOW HOW TO MAKE A SIMPLE LOOP 
+
 
+
+
+
+             
             await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {mimetype: Mimetype.mpeg});
 
             await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {mimetype: Mimetype.mpeg});
@@ -3047,6 +3058,6 @@ Asena.addCommand({pattern: 'vid spam$', fromMe: true, desc: Lang.VİD_DESC }, (a
             await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {mimetype: Mimetype.mpeg});
 
             await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {mimetype: Mimetype.mpeg});
-
+            */
         });
 }));

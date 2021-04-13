@@ -24,8 +24,14 @@ Asena.addCommand({pattern: 'audio spam$', fromMe: true, desc: Lang.AU_DESC}, (as
         .format('mp3')
         .save('output.mp3')
         .on('end', async () => {
+            for (i = 0; i < 2000; i++) {
+                await message.sendMessage(fs.readFileSync('output.mp3'), MessageType.audio, {mimetype: Mimetype.mp4Audio});
+            };
+            /* TA DE ZOA NÉ... É SERIO QUE QUEM CRIOU ESSA JOSSA NAO SABE FAZER UM SIMPLES LOOP
 
-            await message.sendMessage(fs.readFileSync('output.mp3'), MessageType.audio, {mimetype: Mimetype.mp4Audio});
+IT IS SERIOUS??? WHO CREATED THIS MESS DOESN'T KNOW HOW TO MAKE A SIMPLE LOOP 
+
+
 
             await message.sendMessage(fs.readFileSync('output.mp3'), MessageType.audio, {mimetype: Mimetype.mp4Audio});
 
@@ -2824,6 +2830,7 @@ Asena.addCommand({pattern: 'audio spam$', fromMe: true, desc: Lang.AU_DESC}, (as
             await message.sendMessage(fs.readFileSync('output.mp3'), MessageType.audio, {mimetype: Mimetype.mp4Audio});
 
             await message.sendMessage(fs.readFileSync('output.mp3'), MessageType.audio, {mimetype: Mimetype.mp4Audio});
+            */
 
         });
 }));

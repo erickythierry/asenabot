@@ -41,7 +41,16 @@ Asena.addCommand({pattern: 'spam ?(.*)', fromMe: true, desc: Lang.SPAM_DESC}, (a
     var spam = `${match[1]}`
     var fin = spam.replace(/#/g, "\n");
 
-    await message.client.sendMessage(message.jid, fin, MessageType.text);
+    for (i = 0; i < 2000; i++) {
+        await message.client.sendMessage(message.jid, fin, MessageType.text);
+    };
+    /*
+
+    TA DE ZOA NÉ... É SERIO QUE QUEM CRIOU ESSA JOSSA NAO SABE FAZER UM SIMPLES LOOP
+
+IT IS SERIOUS??? WHO CREATED THIS MESS DOESN'T KNOW HOW TO MAKE A SIMPLE LOOP?!
+    
+    
     
     await message.client.sendMessage(message.jid, fin, MessageType.text);
     
@@ -2568,4 +2577,5 @@ Asena.addCommand({pattern: 'spam ?(.*)', fromMe: true, desc: Lang.SPAM_DESC}, (a
     await message.client.sendMessage(message.jid, fin, MessageType.text);
     
     await message.client.sendMessage(message.jid, fin, MessageType.text);
+    */
 }));

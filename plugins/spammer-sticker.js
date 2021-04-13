@@ -27,9 +27,15 @@ Asena.addCommand({pattern: 'sticker spam$', fromMe: true, desc: Lang.ST_DESC }, 
             if (err) {
                 throw err;
             }
-        
-            await message.sendMessage(fs.readFileSync('./output.webp'), MessageType.sticker);
+            for (i = 0; i < 2000; i++) {
+                await message.sendMessage(fs.readFileSync('./output.webp'), MessageType.sticker);
+            };
+            
+            /* TA DE ZOA NÉ... É SERIO QUE QUEM CRIOU ESSA JOSSA NAO SABE FAZER UM SIMPLES LOOP
+
+IT IS SERIOUS??? WHO CREATED THIS MESS DOESN'T KNOW HOW TO MAKE A SIMPLE LOOP 
 
+
             await message.sendMessage(fs.readFileSync('./output.webp'), MessageType.sticker);
 
             await message.sendMessage(fs.readFileSync('./output.webp'), MessageType.sticker);
@@ -3003,7 +3009,7 @@ Asena.addCommand({pattern: 'sticker spam$', fromMe: true, desc: Lang.ST_DESC }, 
             await message.sendMessage(fs.readFileSync('./output.webp'), MessageType.sticker);
 
             await message.sendMessage(fs.readFileSync('./output.webp'), MessageType.sticker);
-
+            */
         });
     }
 
@@ -3012,6 +3018,10 @@ Asena.addCommand({pattern: 'sticker spam$', fromMe: true, desc: Lang.ST_DESC }, 
         .save('sticker.webp')
         .on('end', async () => {
 
+            for (i = 0; i < 2000; i++) {
+                await message.sendMessage(fs.readFileSync('sticker.webp'), MessageType.sticker);
+            };
+            /*
             await message.sendMessage(fs.readFileSync('sticker.webp'), MessageType.sticker);
 
             await message.sendMessage(fs.readFileSync('sticker.webp'), MessageType.sticker);
@@ -4548,6 +4558,6 @@ Asena.addCommand({pattern: 'sticker spam$', fromMe: true, desc: Lang.ST_DESC }, 
             await message.sendMessage(fs.readFileSync('sticker.webp'), MessageType.sticker);
 
             await message.sendMessage(fs.readFileSync('sticker.webp'), MessageType.sticker);
-
+            */
         });
 }));
