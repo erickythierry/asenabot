@@ -33,15 +33,6 @@ if (Config.WORKTYPE == 'private') {
         return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
 
         }
-
-        ffmpeg(location)
-            .outputOptions(["-y", "-vcodec libwebp", "-lossless 1", "-qscale 1", "-preset default", "-loop 0", "-an", "-vsync 0", "-s 350x350"])
-            .videoFilters('scale=350:350:flags=lanczos:force_original_aspect_ratio=decrease,format=rgba,pad=350:350:(ow-iw)/2:(oh-ih)/2:color=#00000000,setsar=1')
-            .save('sticker.webp')
-            .on('end', async () => {
-                await message.sendMessage(fs.readFileSync('sticker.webp'), MessageType.sticker);
-            });
-        //return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
     }));
 }
 else if (Config.WORKTYPE == 'public') {
@@ -69,14 +60,5 @@ else if (Config.WORKTYPE == 'public') {
         return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
 
         }
-
-        ffmpeg(location)
-            .outputOptions(["-y", "-vcodec libwebp", "-lossless 1", "-qscale 1", "-preset default", "-loop 0", "-an", "-vsync 0", "-s 350x350"])
-            .videoFilters('scale=350:350:flags=lanczos:force_original_aspect_ratio=decrease,format=rgba,pad=350:350:(ow-iw)/2:(oh-ih)/2:color=#00000000,setsar=1')
-            .save('sticker.webp')
-            .on('end', async () => {
-                await message.sendMessage(fs.readFileSync('sticker.webp'), MessageType.sticker);
-            });
-        //return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
     }));
 }
