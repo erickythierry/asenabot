@@ -199,7 +199,8 @@ Asena.addCommand({pattern: 'mute ?(.*)', fromMe: true, onlyGroup: true, desc: La
         else if (match[1].includes('m')) {
             delay = parseInt(match[1], 10) * 60000;
             await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
-            await message.client.sendMessage(message.jid,mut.BİRMUTE,MessageType.text);
+            var msg = mut.BİRMUTE+match
+            await message.client.sendMessage(message.jid,msg,MessageType.text);
 
             await new Promise(r => setTimeout(r, delay));
             
@@ -210,7 +211,8 @@ Asena.addCommand({pattern: 'mute ?(.*)', fromMe: true, onlyGroup: true, desc: La
         else if (match[1].includes('h')) {
             delay = parseInt(match[1], 10) * 3600000;
             await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
-            await message.client.sendMessage(message.jid,mut.BİRMUTE,MessageType.text);
+            var msg = mut.BİRMUTE+match
+            await message.client.sendMessage(message.jid,msg,MessageType.text);
 
             await new Promise(r => setTimeout(r, delay));
             
@@ -221,7 +223,8 @@ Asena.addCommand({pattern: 'mute ?(.*)', fromMe: true, onlyGroup: true, desc: La
         else if (match[1].includes('d')) {
             delay = parseInt(match[1], 10) * 86400000;
             await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
-            await message.client.sendMessage(message.jid,mut.BİRMUTE,MessageType.text);
+            var msg = mut.BİRMUTE+match
+            await message.client.sendMessage(message.jid,msg,MessageType.text);
 
             await new Promise(r => setTimeout(r, delay));
             
