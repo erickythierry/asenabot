@@ -1,11 +1,3 @@
-/* Copyright (C) 2020 Yusuf Usta.
-
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-
-WhatsAsena - Yusuf Usta
-*/
-
 const {MessageType, GroupSettingChange} = require('@adiwajshing/baileys');
 const Asena = require('../events');
 const Config = require('../config');
@@ -203,7 +195,7 @@ Asena.addCommand({pattern: 'mute ?(.*)', fromMe: true, onlyGroup: true, desc: La
             await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
             await message.client.sendMessage(message.jid,Lang.MUTED,MessageType.text);
         }
-        
+        // verificador simples de tempo em minutos, horas ou dias
         else if (match[1].includes('m')) {
             delay = parseInt(match[1], 10) * 60000;
             await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
