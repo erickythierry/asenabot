@@ -193,58 +193,58 @@ Asena.addCommand({pattern: 'demote ?(.*)', fromMe: true, onlyGroup: true, desc: 
 
 Asena.addCommand({pattern: 'mute ?(.*)', fromMe: true, onlyGroup: true, desc: Lang.MUTE_DESC}, (async (message, match) => {    
     var im = await checkImAdmin(message);
+    
     if (!im) return await message.client.sendMessage(message.jid,Lang.IM_NOT_ADMIN,MessageType.text);
 
     if (Config.MUTEMSG == 'default') {
+        
+        
         if (match[1] == '') {
             await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
             await message.client.sendMessage(message.jid,Lang.MUTED,MessageType.text);
         }
-        else if (match[1] == '1m') {
+        
+        else if (match[1].includes('m')) {
+            delay = parseInt(match[1], 10) * 60000;
             await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
             await message.client.sendMessage(message.jid,mut.BİRMUTE,MessageType.text);
 
-            await new Promise(r => setTimeout(r, 60000));
-    
+            await new Promise(r => setTimeout(r, delay));
+            
             await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
             await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
-        }
-        else if (match[1] == '2m') {
-            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
-            await message.client.sendMessage(message.jid,mut.İKİMUTE,MessageType.text);
 
-            await new Promise(r => setTimeout(r, 120000));
-    
-            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
-            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
         }
-        else if (match[1] == '3m') {
+        else if (match[1].includes('h')) {
+            delay = parseInt(match[1], 10) * 3600000;
             await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
-            await message.client.sendMessage(message.jid,mut.ÜÇMUTE,MessageType.text);
+            await message.client.sendMessage(message.jid,mut.BİRMUTE,MessageType.text);
 
-            await new Promise(r => setTimeout(r, 180000));
-    
+            await new Promise(r => setTimeout(r, delay));
+            
             await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
             await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
+
         }
-        else if (match[1] == '4m') {
+        else if (match[1].includes('d')) {
+            delay = parseInt(match[1], 10) * 86400000;
             await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
-            await message.client.sendMessage(message.jid,mut.DÖRTMUTE,MessageType.text);
+            await message.client.sendMessage(message.jid,mut.BİRMUTE,MessageType.text);
 
-            await new Promise(r => setTimeout(r, 240000));
-    
+            await new Promise(r => setTimeout(r, delay));
+            
             await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
             await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
-        }
-        else if (match[1] == '5m') {
-            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
-            await message.client.sendMessage(message.jid,mut.BEŞMUTE,MessageType.text);
 
-            await new Promise(r => setTimeout(r, 300000));
-    
-            await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
-            await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
         }
+
+
+
+
+        /*
+            NÃO CUSTA NADA APRENDER A CRIAR UMA VERIFICAÇÃO DE TEMPO SIMPLES PRA CALCULAR O TEMPO DE DELAY...
+            ECONOMIZA TEMPO E LINHAS DE CODIGO INUTEIS
+
         else if (match[1] == '6m') {
             await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
             await message.client.sendMessage(message.jid,mut.ALTIMUTE,MessageType.text);
@@ -1541,6 +1541,7 @@ Asena.addCommand({pattern: 'mute ?(.*)', fromMe: true, onlyGroup: true, desc: La
             await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
             await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
         }
+        */
         else {
             return await message.client.sendMessage(message.jid, mut.TÜR, MessageType.text);
         }
@@ -1555,6 +1556,7 @@ Asena.addCommand({pattern: 'unmute ?(.*)', fromMe: true, onlyGroup: true, desc: 
         await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
         await message.client.sendMessage(message.jid,Lang.UNMUTED,MessageType.text);
     }
+    
     else {
         await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, false);
         await message.client.sendMessage(message.jid,Config.UNMUTEMSG,MessageType.text);
