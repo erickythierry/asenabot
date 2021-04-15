@@ -190,7 +190,7 @@ Asena.addCommand({pattern: 'mute ?(.*)', fromMe: true, onlyGroup: true, desc: La
 
     if (Config.MUTEMSG == 'default') {
         
-        msg = mut.BİRMUTE+match
+        msg = mut.BİRMUTE+match[1]
         if (match[1] == '') {
             await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
             await message.client.sendMessage(message.jid,Lang.MUTED,MessageType.text);

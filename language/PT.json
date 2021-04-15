@@ -249,7 +249,7 @@
             "T_DESC": "Aplica o efeito TBlend selecionado a vídeos." 
         },
         "mute": {
-            "BİRMUTE": "*O grupo foi silenciado por *",
+            "BİRMUTE": "*O grupo foi silenciado por* ",
             "TÜR": "*Comando desconhecido!*\n_Minutos: 1-59m_\n_Horas: 1-12h_\n_Dias: 1d-3d_",
             "MUTE_DESC": "Desativa o bate-papo em grupo. Apenas administradores podem enviar mensagens!",
             "MUTE_OPEN": "```O chat em grupo reativou o som!```"
