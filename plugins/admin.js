@@ -196,6 +196,7 @@ Asena.addCommand({pattern: 'mute ?(.*)', fromMe: true, onlyGroup: true, desc: La
             await message.client.sendMessage(message.jid,Lang.MUTED,MessageType.text);
         }
         // verificador simples de tempo em minutos, horas ou dias
+        
         else if (match[1].includes('m')) {
             delay = parseInt(match[1], 10) * 60000;
             await message.client.groupSettingChange(message.jid, GroupSettingChange.messageSend, true);
