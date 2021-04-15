@@ -104,17 +104,17 @@ async function whatsAsena () {
         console.log(`${chalk.green.bold('Whats')}${chalk.blue.bold('Asena')}
 ${chalk.white.bold('Version:')} ${chalk.red.bold(config.VERSION)}
 
-${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
+${chalk.blue.italic('ℹ️ conectando ao WhatsApp... aguarde.')}`);
     });
     
 
     conn.on('open', async () => {
         console.log(
-            chalk.green.bold('✅ Login successful!')
+            chalk.green.bold('✅ Login bem sucedido!')
         );
 
         console.log(
-            chalk.blueBright.italic('⬇️ Installing External Plugins...')
+            chalk.blueBright.italic('⬇️ Instalando Plugins Externos...')
         );
 
         // ==================== External Plugins ====================
@@ -132,7 +132,7 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
         // ==================== End External Plugins ====================
 
         console.log(
-            chalk.blueBright.italic('⬇️  Installing Plugins...')
+            chalk.blueBright.italic('⬇️  Instalando Plugins...')
         );
 
         // ==================== Internal Plugins ====================
@@ -144,13 +144,13 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
         // ==================== End Internal Plugins ====================
 
         console.log(
-            chalk.green.bold('✅ Plugins Installed!')
+            chalk.green.bold('✅ Plugins instalados!')
         );
         await new Promise(r => setTimeout(r, 1100));
 
         if (config.WORKTYPE == 'public') {
             
-            await conn.sendMessage(conn.user.jid, '*WhatsAsena Working as Public! 🐺*\n\n_Please do not try plugins here. This is your LOG number._\n_You can try commands to any chat :)_\n\n*Your bot working as public. To change it, make the “WORK_TYPE” switch “private” in config vars.*\n\n*Thanks for using WhatsAsena 💌*', MessageType.text);
+            await conn.sendMessage(conn.user.jid, '*Funcionando no modo Publico!*\n\n_Por favor não teste plugins aqui. este é o seu chat de LOG._\n_Você pode testar comandos em qualquer outro chat :)_\n\n*modo publico. Para mudar isso, mude o “WORK_TYPE” para “private” nas variaveis de configuração (config.env).*\n\n*Thanks 💌*', MessageType.text);
 
             await git.fetch();
             var commits = await git.log([config.BRANCH + '..origin/' + config.BRANCH]);
@@ -169,7 +169,7 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
 
                 await conn.sendMessage(
                     conn.user.jid,
-                    '```Type``` *.update now* ```For Update The Bot.```\n\n' + degisiklikler + '```', MessageType.text
+                    '```digite``` *.update now* ```Para atualizar o Bot.```\n\n' + degisiklikler + '```', MessageType.text
                 ); 
             }
         
@@ -180,7 +180,7 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
 
             
 
-            await conn.sendMessage(conn.user.jid, '*WhatsAsena Working as Private! 🐺*\n\n_Please do not try plugins here. This is your LOG number._\n_You can try commands to any chat :)_\n\n*Your bot working as private. To change it, make the “WORK_TYPE” switch “public” in config vars.*\n\n*Thanks for using WhatsAsena 💌*', MessageType.text);
+            await conn.sendMessage(conn.user.jid, '*Funcionando no modo Privado!*\n\n_Por favor não teste plugins aqui. este é o seu chat de LOG._\n_Você pode testar comandos em qualquer outro chat :)_\n\n*Modo Privado. Para mudar isso, mude o “WORK_TYPE” para “public” nas variaveis de configuração (config.env).*\n\n*Thanks 💌*', MessageType.text);
 
             await git.fetch();
             var commits = await git.log([config.BRANCH + '..origin/' + config.BRANCH]);
@@ -227,7 +227,7 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
 
             await conn.sendMessage(
                 conn.user.jid,
-                '_It Looks Like You Want to Switch to Public Mode! Sorry, Your_ *WORK_TYPE* _Key Is Incorrect!_ \n_Dont Worry! I am Trying To Find The Right One For You.._', MessageType.text
+                '_parece que você está tentando mudar para o modo publico! Desculpe, seu_ *WORK_TYPE* _Key está incorreto!_ \n_estou tentando corrigir..._', MessageType.text
             );
 
             await heroku.patch(baseURI + '/config-vars', {
@@ -243,7 +243,7 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
 
             return await conn.sendMessage(
                 conn.user.jid,
-                '_The_ *WORK_TYPE* _Key You Entered Was Not Found!_ \n_Please Type_ ```.setvar WORK_TYPE:private``` _Or_ ```.setvar WORK_TYPE:public```', MessageType.text
+                '*WORK_TYPE* _Key não encontrado!_ \n_por favor digite_ ```.setvar WORK_TYPE:private``` _ou_ ```.setvar WORK_TYPE:public```', MessageType.text
             );
             
         }
@@ -349,7 +349,7 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
                         catch (error) {
                             
                            
-                            await conn.sendMessage(conn.user.jid, '*-- ERROR REPORT [WHATSASENA] --*' + 
+                            await conn.sendMessage(conn.user.jid, '*-- ERROR REPORT  --*' + 
                                 '\n*WhatsAsena an error has occurred!*'+
                                 '\n_This error log may include your number or the number of an opponent. Please be careful with it!_' +
                                 '\n_You can write to our Telegram group for help._' +
@@ -359,7 +359,7 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
                                 , MessageType.text, {detectLinks: false}
                             );
                             if (error.message.includes('URL')) {
-                                return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [WHATSASENA] ⚕️*' + 
+                                return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS ⚕️*' + 
                                     '\n========== ```Error Resolved!``` ==========' +
                                     '\n\n*Main Error:* _Only Absolutely URLs Supported_' +
                                     '\n*Reason:* _The usage of media tools (xmedia, sticker..) in the LOG number._' +
@@ -368,7 +368,7 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
                                 );
                             }
                             else if (error.message.includes('split')) {
-                                return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [WHATSASENA] ⚕️*' + 
+                                return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS ⚕️*' + 
                                     '\n========== ```Error Resolved!``` ==========' +
                                     '\n\n*Main Error:* _Split of Undefined_' +
                                     '\n*Reason:* _Commands that can be used by group admins occasionally dont see the split function._ ' +
@@ -377,7 +377,7 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
                                 );
                             }
                             else if (error.message.includes('Ookla')) {
-                                return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [WHATSASENA] ⚕️*' + 
+                                return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS ⚕️*' + 
                                     '\n========== ```Error Resolved!``` ==========' +
                                     '\n\n*Main Error:* _Ookla Server Connection_' +
                                     '\n*Reason:* _Speedtest data cannot be transmitted to the server._' +
@@ -386,7 +386,7 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
                                 );
                             }
                             else if (error.message.includes('params')) {
-                                return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [WHATSASENA] ⚕️*' + 
+                                return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS ⚕️*' + 
                                     '\n========== ```Error Resolved!``` ==========' +
                                     '\n\n*Main Error:* _Requested Audio Params_' +
                                     '\n*Reason:* _Using the TTS command outside the Latin alphabet._' +
@@ -395,7 +395,7 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
                                 );
                             }
                             else if (error.message.includes('unlink')) {
-                                return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [WHATSASENA] ⚕️*' + 
+                                return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS ⚕️*' + 
                                     '\n========== ```Error Resolved``` ==========' +
                                     '\n\n*Main Error:* _No Such File or Directory_' +
                                     '\n*Reason:* _Incorrect coding of the plugin._' +
@@ -404,7 +404,7 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
                                 );
                             }
                             else if (error.message.includes('404')) {
-                                return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [WHATSASENA] ⚕️*' + 
+                                return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS ⚕️*' + 
                                     '\n========== ```Error Resolved!``` ==========' +
                                     '\n\n*Main Error:* _Error 404 HTTPS_' +
                                     '\n*Reason:* _Failure to communicate with the server as a result of using the commands under the Heroku plugin._' +
@@ -413,7 +413,7 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
                                 );
                             }
                             else if (error.message.includes('reply.delete')) {
-                                return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [WHATSASENA] ⚕️*' + 
+                                return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS ⚕️*' + 
                                     '\n========== ```Error Resolved!``` ==========' +
                                     '\n\n*Main Error:* _Reply Delete Function_' +
                                     '\n*Reason:* _Using IMG or Wiki commands._' +
@@ -422,7 +422,7 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
                                 );
                             }
                             else if (error.message.includes('load.delete')) {
-                                return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [WHATSASENA] ⚕️*' + 
+                                return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS ⚕️*' + 
                                     '\n========== ```Error Resolved!``` ==========' +
                                     '\n\n*Main Error:* _Reply Delete Function_' +
                                     '\n*Reason:* _Using IMG or Wiki commands._' +
@@ -431,7 +431,7 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
                                 );
                             }
                             else if (error.message.includes('400')) {
-                                return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [WHATSASENA] ⚕️*' + 
+                                return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS ⚕️*' + 
                                     '\n========== ```Error Resolved!``` ==========' +
                                     '\n\n*Main Error:* _Bailyes Action Error_ ' +
                                     '\n*Reason:* _The exact reason is unknown. More than one option may have triggered this error._' +
@@ -440,7 +440,7 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
                                 );
                             }
                             else if (error.message.includes('decode')) {
-                                return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [WHATSASENA] ⚕️*' + 
+                                return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS ⚕️*' + 
                                     '\n========== ```Error Resolved!``` ==========' +
                                     '\n\n*Main Error:* _Cannot Decode Text or Media_' +
                                     '\n*Reason:* _Incorrect use of the plug._' +
@@ -449,7 +449,7 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
                                 );
                             }
                             else if (error.message.includes('unescaped')) {
-                                return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [WHATSASENA] ⚕️*' + 
+                                return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS ⚕️*' + 
                                     '\n========== ```Error Resolved!``` ==========' +
                                     '\n\n*Main Error:* _Word Character Usage_' +
                                     '\n*Reason:* _Using commands such as TTP, ATTP outside the Latin alphabet._' +
@@ -458,9 +458,7 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
                                 );
                             }
                             else {
-                                return await conn.sendMessage(conn.user.jid, '*🙇🏻 Sorry, I Couldnt Read This Error! 🙇🏻*' +
-                                    '\n_You can write to our support group for more help._'
-                                    , MessageType.text
+                                return await conn.sendMessage(conn.user.jid, '*🙇🏻 Desculpe. não consegui identificar esse erro! 🙇🏻*', MessageType.text
                                 );
                             }    
                                                   
