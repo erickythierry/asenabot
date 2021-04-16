@@ -145,9 +145,12 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
 
         console.log(
             chalk.green.bold('✅ Plugins Installed!')
+<<<<<<< HEAD
         );
         console.log(
             chalk.green.bold('Bot Rodando...🆗')
+=======
+>>>>>>> parent of 6b409c0 (tradução de alguns comandos)
         );
         await new Promise(r => setTimeout(r, 1100));
 
@@ -353,6 +356,7 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
                             
                            
 <<<<<<< HEAD
+<<<<<<< HEAD
                             await conn.sendMessage(conn.user.jid, '*-- RELATÓRIO DE ERRO  --*' + 
                             '\n *Ocorreu um erro! ' +
                             '\n_Este registro de erros pode incluir seu número ou o número de um usuario. Tenha cuidado com isso! _ '+
@@ -367,6 +371,8 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
                                 '\n *Motivo:* _O uso de ferramentas de mídia (xmedia, Sticker ..) no número do LOG._' +
                                 '\n *Solução:* _Você pode usar comandos em qualquer chat, exceto no chat de LOG._'
 =======
+=======
+>>>>>>> parent of 6b409c0 (tradução de alguns comandos)
                             await conn.sendMessage(conn.user.jid, '*-- ERROR REPORT [WHATSASENA] --*' + 
                                 '\n*WhatsAsena an error has occurred!*'+
                                 '\n_This error log may include your number or the number of an opponent. Please be careful with it!_' +
@@ -388,12 +394,15 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
                             }
                             else if (error.message.includes('split')) {
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 return await conn.sendMessage(conn.user.jid, '*⚕️ ANÁLISE DE ERRO ⚕️* '+
                                 '\n ========== ```Erro resolvido!``` ==========' +
                                 '\n \n *Erro principal:* _Split of Undefined_' +
                                 '\n *Razão:* _Comandos que podem ser usados por administradores de grupo ocasionalmente não veem a função de divisão._' +
                                 '\n *Solução:* _Reiniciar será suficiente._'
 =======
+=======
+>>>>>>> parent of 6b409c0 (tradução de alguns comandos)
                                 return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [WHATSASENA] ⚕️*' + 
                                     '\n========== ```Error Resolved!``` ==========' +
                                     '\n\n*Main Error:* _Split of Undefined_' +
@@ -405,12 +414,15 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
                             }
                             else if (error.message.includes('Ookla')) {
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 return await conn.sendMessage(conn.user.jid, '*⚕️ ANÁLISE DE ERRO ⚕️* '+
                                 '\n ========== ```Erro resolvido!``` ==========' +
                                 '\n \n *Erro principal:* _Conexão do servidor Okla_' +
                                 '\n *Motivo:* _Os dados do teste de velocidade não podem ser transmitidos ao servidor._' +
                                 '\n *Solução:* _Se você usá-lo mais uma vez, o problema será resolvido._'
 =======
+=======
+>>>>>>> parent of 6b409c0 (tradução de alguns comandos)
                                 return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [WHATSASENA] ⚕️*' + 
                                     '\n========== ```Error Resolved!``` ==========' +
                                     '\n\n*Main Error:* _Ookla Server Connection_' +
@@ -422,12 +434,15 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
                             }
                             else if (error.message.includes('params')) {
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 return await conn.sendMessage(conn.user.jid, '*⚕️ ANÁLISE DE ERRO ⚕️* '+
                                 '\n ========== ```Erro resolvido!``` ==========' +
                                 '\n \n *Erro principal:* _Parâmetros de áudio solicitados_' +
                                 '\n *Motivo:* _Usando o comando TTS fora do alfabeto latino._' +
                                 '\n *Solução:* _O problema será resolvido se você usar o comando em letras latinas._'
 =======
+=======
+>>>>>>> parent of 6b409c0 (tradução de alguns comandos)
                                 return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [WHATSASENA] ⚕️*' + 
                                     '\n========== ```Error Resolved!``` ==========' +
                                     '\n\n*Main Error:* _Requested Audio Params_' +
@@ -439,12 +454,15 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
                             }
                             else if (error.message.includes('unlink')) {
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 return await conn.sendMessage(conn.user.jid, '*⚕️ ANÁLISE DE ERRO ⚕️* '+
                                 '\n ========== ```Erro resolvido``` ==========' +
                                 '\n \n *Erro principal:* _Nenhum arquivo ou diretório_' +
                                 '\n *Motivo:* _Codificação incorreta do plugin._' +
                                 '\n *Solução:* _Verifique os códigos do seu plugin._'
 =======
+=======
+>>>>>>> parent of 6b409c0 (tradução de alguns comandos)
                                 return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [WHATSASENA] ⚕️*' + 
                                     '\n========== ```Error Resolved``` ==========' +
                                     '\n\n*Main Error:* _No Such File or Directory_' +
@@ -456,12 +474,15 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
                             }
                             else if (error.message.includes('404')) {
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 return await conn.sendMessage(conn.user.jid, '*⚕️ ANÁLISE DE ERRO ⚕️* '+
                                 '\n ========== ```Erro resolvido!``` ==========' +
                                 '\n \n *Erro principal:* _Error 404 HTTPS_' +
                                 '\n *Motivo:* _Falha ao se comunicar com o servidor como resultado do uso dos comandos do plugin Heroku._' +
                                 '\n *Solução:* _Espere um pouco e tente novamente. Se ainda assim obtiver o erro, efetue a transação no site._'
 =======
+=======
+>>>>>>> parent of 6b409c0 (tradução de alguns comandos)
                                 return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [WHATSASENA] ⚕️*' + 
                                     '\n========== ```Error Resolved!``` ==========' +
                                     '\n\n*Main Error:* _Error 404 HTTPS_' +
@@ -473,12 +494,15 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
                             }
                             else if (error.message.includes('reply.delete')) {
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 return await conn.sendMessage(conn.user.jid, '*⚕️ ANÁLISE DE ERRO ⚕️* '+
                                 '\n ========== ```Erro resolvido!``` ==========' +
                                 '\n \n *Erro principal:* _Replicar função de exclusão_' +
                                 '\n *Motivo:* _Usando comandos IMG ou Wiki._' +
                                 '\n *Solução:* _Não há solução para este erro. Não é um erro fatal._'
 =======
+=======
+>>>>>>> parent of 6b409c0 (tradução de alguns comandos)
                                 return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [WHATSASENA] ⚕️*' + 
                                     '\n========== ```Error Resolved!``` ==========' +
                                     '\n\n*Main Error:* _Reply Delete Function_' +
@@ -490,12 +514,15 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
                             }
                             else if (error.message.includes('load.delete')) {
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 return await conn.sendMessage(conn.user.jid, '*⚕️ ANÁLISE DE ERRO ⚕️* '+
                                 '\n ========== ```Erro resolvido!``` ==========' +
                                 '\n \n *Erro principal:* _Replicar função de exclusão_' +
                                 '\n *Motivo:* _Usando comandos IMG ou Wiki._' +
                                 '\n *Solução:* _Não há solução para este erro. Não é um erro fatal._'
 =======
+=======
+>>>>>>> parent of 6b409c0 (tradução de alguns comandos)
                                 return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [WHATSASENA] ⚕️*' + 
                                     '\n========== ```Error Resolved!``` ==========' +
                                     '\n\n*Main Error:* _Reply Delete Function_' +
@@ -507,12 +534,15 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
                             }
                             else if (error.message.includes('400')) {
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 return await conn.sendMessage(conn.user.jid, '*⚕️ ANÁLISE DE ERRO ⚕️ * '+
                                 '\ n ========== ```Erro resolvido!``` ==========' +
                                 '\ n \ n *Erro principal:* _Bailyes Action Error_' +
                                 '\ n *Razão:* _A razão exata é desconhecida. Mais de uma opção pode ter acionado este erro._ '+
                                 '\ n *Solução:* _Se você usar novamente, pode melhorar. Se o erro persistir, você pode tentar reiniciar._'
 =======
+=======
+>>>>>>> parent of 6b409c0 (tradução de alguns comandos)
                                 return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [WHATSASENA] ⚕️*' + 
                                     '\n========== ```Error Resolved!``` ==========' +
                                     '\n\n*Main Error:* _Bailyes Action Error_ ' +
@@ -524,12 +554,15 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
                             }
                             else if (error.message.includes('decode')) {
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 return await conn.sendMessage(conn.user.jid, '*⚕️ ANÁLISE DE ERRO ⚕️ * '+
                                 '\ n ========== ```Erro resolvido!``` ==========' +
                                 '\ n \ n *Erro principal:* _Não é possível decodificar texto ou mídia_' +
                                 '\ n *Motivo:* _uso incorreto do plugin._' +
                                 '\ n *Solução:* _Por favor, use os comandos conforme escritos na descrição do plug-in._'
 =======
+=======
+>>>>>>> parent of 6b409c0 (tradução de alguns comandos)
                                 return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [WHATSASENA] ⚕️*' + 
                                     '\n========== ```Error Resolved!``` ==========' +
                                     '\n\n*Main Error:* _Cannot Decode Text or Media_' +
@@ -541,12 +574,15 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
                             }
                             else if (error.message.includes('unescaped')) {
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 return await conn.sendMessage(conn.user.jid, '*⚕️ ANÁLISE DE ERRO ⚕️ * '+
                                 '\ n ========== ```Erro resolvido!``` ==========' +
                                 '\ n \ n *Erro principal:* _Uso de caracteres da palavra_' +
                                 '\ n *Motivo:* _Usando comandos como TTP, ATTP fora do alfabeto latino._' +
                                 '\ n *Solução:* _O problema será resolvido se você usar o comando em alfabeto latino.._'
 =======
+=======
+>>>>>>> parent of 6b409c0 (tradução de alguns comandos)
                                 return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [WHATSASENA] ⚕️*' + 
                                     '\n========== ```Error Resolved!``` ==========' +
                                     '\n\n*Main Error:* _Word Character Usage_' +
