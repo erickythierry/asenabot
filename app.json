@@ -6,7 +6,7 @@
     "repository": "https://github.com/erickythierry/asenabot",
     "stack": "container",
     "env": {
-        "WPP_SESSION": {
+        "ASENA_SESSION": {
             "description": "token de sessão do bot. (gere ele rodando o script 'qr.js' do projeto",
             "required": true
         },
