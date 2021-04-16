@@ -146,6 +146,9 @@ ${chalk.blue.italic('ℹ️ conectando ao WhatsApp... aguarde.')}`);
         console.log(
             chalk.green.bold('✅ Plugins instalados!')
         );
+        console.log(
+            chalk.green.bold('Bot Rodando...🆗')
+        );
         await new Promise(r => setTimeout(r, 1100));
 
         if (config.WORKTYPE == 'public') {
