@@ -41,7 +41,7 @@ fs.readdirSync('./plugins/sql/').forEach(plugin => {
 
 const plugindb = require('./plugins/sql/plugin');
 
-// Yalnızca bir kolaylık. https://stackoverflow.com/questions/4974238/javascript-equivalent-of-pythons-format-function //
+
 String.prototype.format = function () {
     var i = 0, args = arguments;
     return this.replace(/{}/g, function () {
@@ -89,7 +89,7 @@ async function whatsAsena () {
 
     conn.on ('credentials-updated', async () => {
         console.log(
-            chalk.blueBright.italic('✅ Login Information Updated!')
+            chalk.blueBright.italic('✅ informações de login atualizadas!')
         );
 
         const authInfo = conn.base64EncodedAuthInfo();
@@ -101,8 +101,8 @@ async function whatsAsena () {
     })    
 
     conn.on('connecting', async () => {
-        console.log(`${chalk.green.bold('Whats')}${chalk.blue.bold('Asena')}
-${chalk.white.bold('Version:')} ${chalk.red.bold(config.VERSION)}
+        console.log(`${chalk.green.bold('Whats')}${chalk.blue.bold('Bot')}
+${chalk.white.bold('Versão:')} ${chalk.red.bold(config.VERSION)}
 
 ${chalk.blue.italic('ℹ️ conectando ao WhatsApp... aguarde.')}`);
     });
@@ -199,7 +199,7 @@ ${chalk.blue.italic('ℹ️ conectando ao WhatsApp... aguarde.')}`);
 
                 await conn.sendMessage(
                     conn.user.jid,
-                    '```Type``` *.update now* ```For The Update Bot.```\n\n' + degisiklikler + '```', MessageType.text
+                    '```Digite``` *.update now* ```Para atualizar o Bot.```\n\n' + degisiklikler + '```', MessageType.text
                 ); 
             }
             
@@ -211,7 +211,7 @@ ${chalk.blue.italic('ℹ️ conectando ao WhatsApp... aguarde.')}`);
 
             await conn.sendMessage(
                 conn.user.jid,
-                '_It Looks Like You Want to Switch to Private Mode! Sorry, Your_ *WORK_TYPE* _Key Is Incorrect!_ \n_Dont Worry! I am Trying To Find The Right One For You.._', MessageType.text
+                '_Parece que voce quer mudar para o modo Privado! Desculpe, a variavel_ *WORK_TYPE* _ está incorreta!_ \n_mas tudo bem! Estou tentando corrigir para você.._', MessageType.text
             );
 
             await heroku.patch(baseURI + '/config-vars', {
@@ -349,111 +349,109 @@ ${chalk.blue.italic('ℹ️ conectando ao WhatsApp... aguarde.')}`);
                         catch (error) {
                             
                            
-                            await conn.sendMessage(conn.user.jid, '*-- ERROR REPORT  --*' + 
-                                '\n*WhatsAsena an error has occurred!*'+
-                                '\n_This error log may include your number or the number of an opponent. Please be careful with it!_' +
-                                '\n_You can write to our Telegram group for help._' +
-                                '\n_Aslo you can join our support group:_ https://chat.whatsapp.com/Jnt9jrJdH2E456Zbchwx3t' +
-                                '\n_This message should have gone to your number (saved messages)._\n\n' +
-                                '*Error:* ```' + error + '```\n\n'
+                            await conn.sendMessage(conn.user.jid, '*-- RELATÓRIO DE ERRO  --*' + 
+                            '\n *Ocorreu um erro! ' +
+                            '\n_Este registro de erros pode incluir seu número ou o número de um usuario. Tenha cuidado com isso! _ '+
+                            '\n_Esta mensagem deveria ter ido para o seu número (mensagens salvas)._\n\n' +
+                            '*Erro:* ```' + error + '```\n\n'
                                 , MessageType.text, {detectLinks: false}
                             );
                             if (error.message.includes('URL')) {
-                                return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS ⚕️*' + 
-                                    '\n========== ```Error Resolved!``` ==========' +
-                                    '\n\n*Main Error:* _Only Absolutely URLs Supported_' +
-                                    '\n*Reason:* _The usage of media tools (xmedia, sticker..) in the LOG number._' +
-                                    '\n*Solution:* _You can use commands in any chat, except the LOG number._'
+                                return await conn.sendMessage(conn.user.jid, '*⚕️ ANÁLISE DE ERRO ⚕️* '+
+                                '\n ========== ```Erro resolvido!``` ==========' +
+                                '\n \n *Erro principal:* _Só URLs absolutas suportadas_' +
+                                '\n *Motivo:* _O uso de ferramentas de mídia (xmedia, Sticker ..) no número do LOG._' +
+                                '\n *Solução:* _Você pode usar comandos em qualquer chat, exceto no chat de LOG._'
                                     , MessageType.text
                                 );
                             }
                             else if (error.message.includes('split')) {
-                                return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS ⚕️*' + 
-                                    '\n========== ```Error Resolved!``` ==========' +
-                                    '\n\n*Main Error:* _Split of Undefined_' +
-                                    '\n*Reason:* _Commands that can be used by group admins occasionally dont see the split function._ ' +
-                                    '\n*Solution:* _Restarting will be enough._'
+                                return await conn.sendMessage(conn.user.jid, '*⚕️ ANÁLISE DE ERRO ⚕️* '+
+                                '\n ========== ```Erro resolvido!``` ==========' +
+                                '\n \n *Erro principal:* _Split of Undefined_' +
+                                '\n *Razão:* _Comandos que podem ser usados por administradores de grupo ocasionalmente não veem a função de divisão._' +
+                                '\n *Solução:* _Reiniciar será suficiente._'
                                     , MessageType.text
                                 );
                             }
                             else if (error.message.includes('Ookla')) {
-                                return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS ⚕️*' + 
-                                    '\n========== ```Error Resolved!``` ==========' +
-                                    '\n\n*Main Error:* _Ookla Server Connection_' +
-                                    '\n*Reason:* _Speedtest data cannot be transmitted to the server._' +
-                                    '\n*Solution:* _If you use it one more time the problem will be solved._'
+                                return await conn.sendMessage(conn.user.jid, '*⚕️ ANÁLISE DE ERRO ⚕️* '+
+                                '\n ========== ```Erro resolvido!``` ==========' +
+                                '\n \n *Erro principal:* _Conexão do servidor Okla_' +
+                                '\n *Motivo:* _Os dados do teste de velocidade não podem ser transmitidos ao servidor._' +
+                                '\n *Solução:* _Se você usá-lo mais uma vez, o problema será resolvido._'
                                     , MessageType.text
                                 );
                             }
                             else if (error.message.includes('params')) {
-                                return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS ⚕️*' + 
-                                    '\n========== ```Error Resolved!``` ==========' +
-                                    '\n\n*Main Error:* _Requested Audio Params_' +
-                                    '\n*Reason:* _Using the TTS command outside the Latin alphabet._' +
-                                    '\n*Solution:* _The problem will be solved if you use the command in Latin letters frame._'
+                                return await conn.sendMessage(conn.user.jid, '*⚕️ ANÁLISE DE ERRO ⚕️* '+
+                                '\n ========== ```Erro resolvido!``` ==========' +
+                                '\n \n *Erro principal:* _Parâmetros de áudio solicitados_' +
+                                '\n *Motivo:* _Usando o comando TTS fora do alfabeto latino._' +
+                                '\n *Solução:* _O problema será resolvido se você usar o comando em letras latinas._'
                                     , MessageType.text
                                 );
                             }
                             else if (error.message.includes('unlink')) {
-                                return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS ⚕️*' + 
-                                    '\n========== ```Error Resolved``` ==========' +
-                                    '\n\n*Main Error:* _No Such File or Directory_' +
-                                    '\n*Reason:* _Incorrect coding of the plugin._' +
-                                    '\n*Solution:* _Please check the your plugin codes._'
+                                return await conn.sendMessage(conn.user.jid, '*⚕️ ANÁLISE DE ERRO ⚕️* '+
+                                '\n ========== ```Erro resolvido``` ==========' +
+                                '\n \n *Erro principal:* _Nenhum arquivo ou diretório_' +
+                                '\n *Motivo:* _Codificação incorreta do plugin._' +
+                                '\n *Solução:* _Verifique os códigos do seu plugin._'
                                     , MessageType.text
                                 );
                             }
                             else if (error.message.includes('404')) {
-                                return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS ⚕️*' + 
-                                    '\n========== ```Error Resolved!``` ==========' +
-                                    '\n\n*Main Error:* _Error 404 HTTPS_' +
-                                    '\n*Reason:* _Failure to communicate with the server as a result of using the commands under the Heroku plugin._' +
-                                    '\n*Solution:* _Wait a while and try again. If you still get the error, perform the transaction on the website.._'
+                                return await conn.sendMessage(conn.user.jid, '*⚕️ ANÁLISE DE ERRO ⚕️* '+
+                                '\n ========== ```Erro resolvido!``` ==========' +
+                                '\n \n *Erro principal:* _Error 404 HTTPS_' +
+                                '\n *Motivo:* _Falha ao se comunicar com o servidor como resultado do uso dos comandos do plugin Heroku._' +
+                                '\n *Solução:* _Espere um pouco e tente novamente. Se ainda assim obtiver o erro, efetue a transação no site._'
                                     , MessageType.text
                                 );
                             }
                             else if (error.message.includes('reply.delete')) {
-                                return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS ⚕️*' + 
-                                    '\n========== ```Error Resolved!``` ==========' +
-                                    '\n\n*Main Error:* _Reply Delete Function_' +
-                                    '\n*Reason:* _Using IMG or Wiki commands._' +
-                                    '\n*Solution:* _There is no solution for this error. It is not a fatal error._'
+                                return await conn.sendMessage(conn.user.jid, '*⚕️ ANÁLISE DE ERRO ⚕️* '+
+                                '\n ========== ```Erro resolvido!``` ==========' +
+                                '\n \n *Erro principal:* _Replicar função de exclusão_' +
+                                '\n *Motivo:* _Usando comandos IMG ou Wiki._' +
+                                '\n *Solução:* _Não há solução para este erro. Não é um erro fatal._'
                                     , MessageType.text
                                 );
                             }
                             else if (error.message.includes('load.delete')) {
-                                return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS ⚕️*' + 
-                                    '\n========== ```Error Resolved!``` ==========' +
-                                    '\n\n*Main Error:* _Reply Delete Function_' +
-                                    '\n*Reason:* _Using IMG or Wiki commands._' +
-                                    '\n*Solution:* _There is no solution for this error. It is not a fatal error._'
+                                return await conn.sendMessage(conn.user.jid, '*⚕️ ANÁLISE DE ERRO ⚕️* '+
+                                '\n ========== ```Erro resolvido!``` ==========' +
+                                '\n \n *Erro principal:* _Replicar função de exclusão_' +
+                                '\n *Motivo:* _Usando comandos IMG ou Wiki._' +
+                                '\n *Solução:* _Não há solução para este erro. Não é um erro fatal._'
                                     , MessageType.text
                                 );
                             }
                             else if (error.message.includes('400')) {
-                                return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS ⚕️*' + 
-                                    '\n========== ```Error Resolved!``` ==========' +
-                                    '\n\n*Main Error:* _Bailyes Action Error_ ' +
-                                    '\n*Reason:* _The exact reason is unknown. More than one option may have triggered this error._' +
-                                    '\n*Solution:* _If you use it again, it may improve. If the error continues, you can try to restart._'
+                                return await conn.sendMessage(conn.user.jid, '*⚕️ ANÁLISE DE ERRO ⚕️ * '+
+                                '\ n ========== ```Erro resolvido!``` ==========' +
+                                '\ n \ n *Erro principal:* _Bailyes Action Error_' +
+                                '\ n *Razão:* _A razão exata é desconhecida. Mais de uma opção pode ter acionado este erro._ '+
+                                '\ n *Solução:* _Se você usar novamente, pode melhorar. Se o erro persistir, você pode tentar reiniciar._'
                                     , MessageType.text
                                 );
                             }
                             else if (error.message.includes('decode')) {
-                                return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS ⚕️*' + 
-                                    '\n========== ```Error Resolved!``` ==========' +
-                                    '\n\n*Main Error:* _Cannot Decode Text or Media_' +
-                                    '\n*Reason:* _Incorrect use of the plug._' +
-                                    '\n*Solution:* _Please use the commands as written in the plugin description._'
+                                return await conn.sendMessage(conn.user.jid, '*⚕️ ANÁLISE DE ERRO ⚕️ * '+
+                                '\ n ========== ```Erro resolvido!``` ==========' +
+                                '\ n \ n *Erro principal:* _Não é possível decodificar texto ou mídia_' +
+                                '\ n *Motivo:* _uso incorreto do plugin._' +
+                                '\ n *Solução:* _Por favor, use os comandos conforme escritos na descrição do plug-in._'
                                     , MessageType.text
                                 );
                             }
                             else if (error.message.includes('unescaped')) {
-                                return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS ⚕️*' + 
-                                    '\n========== ```Error Resolved!``` ==========' +
-                                    '\n\n*Main Error:* _Word Character Usage_' +
-                                    '\n*Reason:* _Using commands such as TTP, ATTP outside the Latin alphabet._' +
-                                    '\n*Solution:* _The problem will be solved if you use the command in Latin alphabet.._'
+                                return await conn.sendMessage(conn.user.jid, '*⚕️ ANÁLISE DE ERRO ⚕️ * '+
+                                '\ n ========== ```Erro resolvido!``` ==========' +
+                                '\ n \ n *Erro principal:* _Uso de caracteres da palavra_' +
+                                '\ n *Motivo:* _Usando comandos como TTP, ATTP fora do alfabeto latino._' +
+                                '\ n *Solução:* _O problema será resolvido se você usar o comando em alfabeto latino.._'
                                     , MessageType.text
                                 );
                             }
