@@ -1,8 +1,8 @@
 {
     "__ASENAJSON__": true,
     "LANGUAGE": "Português Brasileiro",
-    "LANGCODE": "pt",
-    "AUTHOR": "@xmtscf",
+    "LANGCODE": "br",
+    "AUTHOR": "@xmtscf @Phoenixx1202",
     "STRINGS": {
         "_asena": {
             "COMMAND": "Comando",
@@ -386,8 +386,8 @@
             "ARAT": "Música pesquisada:"
         },
         "covid": {
-            "COV_DESC": "Mostra a mesa cobiçada diária e geral de mais de 15 países.",
-            "NOT": "```Desculpe, não consegui encontrar um país como este! Insira os códigos de país aplicáveis!```\n\n```Country Codes:``` *.covid tr || az || usa || in || cn || nl || pk || ru || de || uk || gr || fr || jp || kz || id*"
+            "COV_DESC": "Mostra as informações diárias e gerais de mais de 15 países sobre a COVID-19.",
+            "NOT": "```Desculpe, não consegui encontrar um país como este! Insira os códigos de países aplicáveis!```\n\n```Códigos de países:``` *.covid tr || az || usa || in || cn || nl || pk || ru || de || uk || gr || fr || jp || kz || id*"
         }
     }
 }
