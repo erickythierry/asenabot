@@ -75,7 +75,7 @@ if (cn.WORKTYPE == 'private') {
             })
 
             await message.sendMessage(Buffer.from(profileBuffer.data), MessageType.video, {
-              caption: 'Made by BOT',
+              caption: 'feito com 💚 wppBbot',
             })
           })
           .catch(
@@ -149,7 +149,7 @@ else if (cn.WORKTYPE == 'public') {
             })
 
             await message.sendMessage(Buffer.from(profileBuffer.data), MessageType.video, {
-              caption: 'Made by BOT',
+              caption: 'feito com 💚 wppBbot',
             })
           })
           .catch(
