@@ -1,4 +1,4 @@
-FROM ethie/asenabot
+FROM ethie/asenabot:last
 RUN git clone https://github.com/erickythierry/asenabot bot
 WORKDIR /bot
 RUN npm install supervisor -g
