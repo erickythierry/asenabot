@@ -8,7 +8,7 @@ const NotesDB = require('./sql/notes');
 const Language = require('../language')
 const Lang = Language.getString('notes')
 
-Asena.addCommand({ pattern: 'notes', fromMe: true, desc: Lang.NOTES_USAGE }, async (message, match) => {
+Asena.addCommand({ pattern: 'notas', fromMe: false, desc: Lang.NOTES_USAGE, dontAddCommandList: true }, async (message, match) => {
 
 
     const _notes = await NotesDB.getNotes()
@@ -37,7 +37,7 @@ Asena.addCommand({ pattern: 'notes', fromMe: true, desc: Lang.NOTES_USAGE }, asy
 
 
 
-Asena.addCommand({ pattern: 'save ?(.*)', fromMe: true, desc: Lang.SAVE_USAGE }, async (message, match) => {
+Asena.addCommand({ pattern: 'salvar ?(.*)', fromMe: false, desc: Lang.SAVE_USAGE, dontAddCommandList: true }, async (message, match) => {
 
     const userNote = match[1]
 
@@ -85,7 +85,7 @@ Asena.addCommand({ pattern: 'save ?(.*)', fromMe: true, desc: Lang.SAVE_USAGE },
     }
 })
 
-Asena.addCommand({ pattern: 'deleteNotes', fromMe: true, desc: Lang.DELETE_USAGE }, async (message, match) => {
+Asena.addCommand({ pattern: 'deleteNotas', fromMe: false, desc: Lang.DELETE_USAGE, dontAddCommandList: true }, async (message, match) => {
 
     await NotesDB.deleteAllNotes()
 

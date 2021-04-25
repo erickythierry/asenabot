@@ -42,7 +42,7 @@
             "MUTED": "```Bate-papo em grupo silenciado!```",
             "UNMUTE_DESC": "Ative o bate-papo em grupo. Qualquer um pode enviar uma mensagem.",
             "UNMUTED": "```O bate-papo em grupo foi ativado!```",
-            "INVITE_DESC": "Fornece o link de convite do grupo.",
+            "INVITE_DESC": "Fornece o link de convite do grupo onde o bot está.",
             "INVITE": "```Link de convite: ```"
         },
         "locate": {
@@ -105,10 +105,10 @@
         "greetings": {
             "WELCOME_DESC": "Ele define a mensagem de boas-vindas. Se você deixar em branco, ele mostra a mensagem de boas-vindas.",
             "NOT_SET_WELCOME": "*Você ainda não definiu a mensagem de boas-vindas.!*\n**Determinar:** ```.welcome hi && hi#how are you?```",
-            "WELCOME_ALREADY_SETTED": "*✅ Mensagem de boas-vindas já definida!*\n*Mensagem:* ```",
+            "WELCOME_ALREADY_SETTED": "*✅ Mensagem de boas vindas já definida!*\n*Mensagem:* ```",
             "NEED_WELCOME_TEXT": "*Você deve escrever uma mensagem para configurar a mensagem de boas-vindas.*\n*Exemplo:* ```.welcome hi && hi#how are you?```",
-            "WELCOME_DELETED": "*✅ A mensagem de boas-vindas foi excluída com sucesso!*",
-            "WELCOME_SETTED": "*✅A mensagem de boas-vindas foi definida com sucesso!*",
+            "WELCOME_DELETED": "*✅ A mensagem de boas vindas foi excluída com sucesso!*",
+            "WELCOME_SETTED": "*✅A mensagem de boas vindas foi definida com sucesso!*",
             "GOODBYE_DESC": "Define a mensagem de despedida. Se você deixar em branco, é a mensagem de despedida.",
             "NOT_SET_GOODBYE": "*Você não definiu uma mensagem de despedida!*\n*Determinar:* ```.goodbye bye && bye#see ya```",
             "GOODBYE_ALREADY_SETTED": "*✅ A mensagem de despedida foi definida!*\n*Mensagem:* ```",
@@ -163,7 +163,7 @@
         },
         "scrapers": {
             "TRANSLATE_DESC": "Traduz com o Google Translate. Você deve responder qualquer mensagem.",
-            "TRANSLATE_USAGE": ".trt tr it (De turco para italiano)",
+            "TRANSLATE_USAGE": ".tr in pt (De inglês para português)",
             "NEED_REPLY": "```Por favor responda a qualquer mensagem!```",
             "LANG": "Língua",
             "FROM": "Língua Traduzida",
@@ -279,8 +279,8 @@
             "VİD_NEED": "```Por favor, responda a qualquer vídeo!```"
         },
         "carbon": {
-            "CARBON_DESC": "Usa carbon.sh para Text-to-Image",
-            "CARBON_NEEDWORD": "*Argumentos insuficientes para traduzir Text-to-Image!*\nExemplo: ```.carbon test```\nExemplo: ```.carbon making#test```",
+            "CARBON_DESC": "Usa carbon.sh para gerar uma imagem com texto",
+            "CARBON_NEEDWORD": "*Argumentos insuficientes para gerar a imagem!*\nExemplo: ```/carbon test```\nExemplo: ```/carbon making#test```",
             "CARBON_WARN": "Por favor, digite apenas os caracteres en e tr!"
         },
         "scam": {

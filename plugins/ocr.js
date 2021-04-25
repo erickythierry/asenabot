@@ -1,5 +1,3 @@
-
-
 const Asena = require('../events');
 const Config = require('../config');
 const {MessageType} = require('@adiwajshing/baileys');
@@ -8,77 +6,41 @@ const langs = require('langs');
 const Language = require('../language');
 const Lang = Language.getString('ocr');
 
-if (Config.WORKTYPE == 'private') {
 
-    Asena.addCommand({pattern: 'ocr ?(.*)', fromMe: true, desc: Lang.OCR_DESC}, (async (message, match) => { 
 
-        if (message.reply_message === false) return await message.sendMessage(Lang.NEED_REPLY);    
-	var info = await message.reply(Lang.DOWNLOADING);
-        var location = await message.client.downloadAndSaveMediaMessage({
-            key: {
-                remoteJid: message.reply_message.jid,
-                id: message.reply_message.id
-            },
-            message: message.reply_message.data.quotedMessage
-        });
 
-        var dil;
-        if (match[1] !== '') {
-            dil = langs.where("1", match[1]);
-        } else {
-            dil = langs.where("1", Config.LANG.toLowerCase());
-        }
+Asena.addCommand({pattern: 'ocr ?(.*)', fromMe: false, desc: Lang.OCR_DESC, dontAddCommandList: true}, (async (message, match) => { 
 
-        try {
-            var result = await tesseract.recognize(location, {
-                lang: dil[2]
-            });    
-        } catch (e) {
-            return await message.reply(Lang.ERROR.format(e));
-        }
+    if (message.reply_message === false) return await message.sendMessage(Lang.NEED_REPLY);    
+var info = await message.reply(Lang.DOWNLOADING);
+    var location = await message.client.downloadAndSaveMediaMessage({
+        key: {
+            remoteJid: message.reply_message.jid,
+            id: message.reply_message.id
+        },
+        message: message.reply_message.data.quotedMessage
+    });
 
-        await info.delete();
-        if ( result === ' ' || result.length == 1 ) {
-            return await message.reply(Lang.ERROR.format(' Empty text'));
-        }
+    var dil;
+    if (match[1] !== '') {
+        dil = langs.where("1", match[1]);
+    } else {
+        dil = langs.where("1", Config.LANG.toLowerCase());
+    }
 
-        return await message.reply(Lang.RESULT.format(dil[2], result));
-    }));
-}
-else if (Config.WORKTYPE == 'public') {
+    try {
+        var result = await tesseract.recognize(location, {
+            lang: dil[2]
+        });    
+    } catch (e) {
+        return await message.reply(Lang.ERROR.format(e));
+    }
 
-    Asena.addCommand({pattern: 'ocr ?(.*)', fromMe: false, desc: Lang.OCR_DESC}, (async (message, match) => { 
+    await info.delete();
+    if ( result === ' ' || result.length == 1 ) {
+        return await message.reply(Lang.ERROR.format(' Empty text'));
+    }
 
-        if (message.reply_message === false) return await message.sendMessage(Lang.NEED_REPLY);    
-	var info = await message.reply(Lang.DOWNLOADING);
-        var location = await message.client.downloadAndSaveMediaMessage({
-            key: {
-                remoteJid: message.reply_message.jid,
-                id: message.reply_message.id
-            },
-            message: message.reply_message.data.quotedMessage
-        });
+    return await message.reply(Lang.RESULT.format(dil[2], result));
+}));
 
-        var dil;
-        if (match[1] !== '') {
-            dil = langs.where("1", match[1]);
-        } else {
-            dil = langs.where("1", Config.LANG.toLowerCase());
-        }
-
-        try {
-            var result = await tesseract.recognize(location, {
-                lang: dil[2]
-            });    
-        } catch (e) {
-            return await message.reply(Lang.ERROR.format(e));
-        }
-
-        await info.delete();
-        if ( result === ' ' || result.length == 1 ) {
-            return await message.reply(Lang.ERROR.format(' Empty text'));
-        }
-
-        return await message.reply(Lang.RESULT.format(dil[2], result));
-    }));
-}

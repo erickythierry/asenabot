@@ -3,7 +3,7 @@
     "description": "WhatApp project ",
     "logo": "",
     "keywords": ["whatsapp", "userbot", "bot", "api", "ai"],
-    "repository": "https://github.com/erickythierry/asenabot",
+    "repository": "https://github.com/erickythierry/whatsapp.bot",
     "stack": "container",
     "env": {
         "ASENA_SESSION": {
@@ -28,19 +28,6 @@
             "description": "Ativar ou desativar a confirmação de leitura de mensagem pelo bot (true para ele enviar a confirmação, e False para ele não enviar confirmação) ",
             "required": true,
             "value": "true"
-        },
-        "HEROKU": {
-            "description": "Deixe True se você está usando no heroku.",
-            "required": true,
-            "value": "true"
-        },
-        "HEROKU_API_KEY": {
-            "description": "API key do heroku (vá nas configurações da sua conta do heroku para conseguir).",
-            "required": true
-        },
-        "HEROKU_APP_NAME": {
-            "description": "nome desse app heroku que você está criando (nescessario para usar as funções do heroku no bot)",
-            "required": true
         },
         "MUTE_MESSAGE": {
             "description": "Mensagem exibida ao mutar um grupo (use default para usar a mensagem padrão do bot)",

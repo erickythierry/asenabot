@@ -102,8 +102,3 @@ dist
 
 # TernJS port file
 .tern-port
-session.asena
-*.db
-package-lock.json
-.DS_Store
-config.env
